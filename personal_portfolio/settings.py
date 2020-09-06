@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '(7$=wk2p#q%1)f$texs5u9m&fpr-jv_y^kr(cl+hg72en=*e28'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['joaofula.pythonanywhere.com']
 
 
 # Application definition
@@ -120,8 +121,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = ['home/fula/Joao/PythonDocs/django/personal_portfolio_project/portfolio/static/']
-
+#STATICFILES_DIRS = ['home/fula/Joao/PythonDocs/django/personal_portfolio_project/portfolio/static/']
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
